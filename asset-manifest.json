@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.f420b21e.css",
-    "main.js": "/static/js/main.bc17e81a.js",
-    "index.html": "/index.html",
-    "main.f420b21e.css.map": "/static/css/main.f420b21e.css.map",
-    "main.bc17e81a.js.map": "/static/js/main.bc17e81a.js.map"
+    "main.css": "/skrap-world/static/css/main.f420b21e.css",
+    "main.js": "/skrap-world/static/js/main.bc17e81a.js",
+    "index.html": "/skrap-world/index.html",
+    "main.f420b21e.css.map": "/skrap-world/static/css/main.f420b21e.css.map",
+    "main.bc17e81a.js.map": "/skrap-world/static/js/main.bc17e81a.js.map"
   },
   "entrypoints": [
     "static/css/main.f420b21e.css",
