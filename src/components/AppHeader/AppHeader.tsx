@@ -2,8 +2,6 @@ import React from 'react';
 
 import { NavMenu } from '../NavMenu';
 
-import './AppHeader.css';
-
 export const AppHeader = () => {
   return (
     <header
@@ -14,7 +12,7 @@ export const AppHeader = () => {
         borderBottom: '1px solid black',
       }}
     >
-      <p>Skrap World</p>
+      <p style={{ fontFamily: 'AbFubu', fontSize: '60px' }}>Skrap World</p>
       <NavMenu />
     </header>
   );

@@ -9,12 +9,16 @@ import { HomePage, LinksPage, MorePage } from './pages';
 const App = () => {
   return (
     <Router>
-      <AppHeader />
-      <Routes>
-        <Route path={HOME} element={<HomePage />} />
-        <Route path={LINKS} element={<LinksPage />} />
-        <Route path={MORE} element={<MorePage />} />
-      </Routes>
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+        <AppHeader />
+        <main style={{ flex: 1, padding: '16px', overflowY: 'auto' }}>
+          <Routes>
+            <Route path={HOME} element={<HomePage />} />
+            <Route path={LINKS} element={<LinksPage />} />
+            <Route path={MORE} element={<MorePage />} />
+          </Routes>
+        </main>
+      </div>
     </Router>
   );
 }
