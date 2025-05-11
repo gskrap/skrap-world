@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import { AppHeader } from './components';
 import { HOME, LINKS, MORE } from './constants/routes';
