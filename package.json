@@ -19,6 +19,7 @@
     "typescript": "^4.4.2"
   },
   "devDependencies": {
+    "eslint-plugin-import": "^2.31.0",
     "gh-pages": "^6.3.0"
   },
   "scripts": {
@@ -37,6 +38,32 @@
       "react-app/jest"
     ],
     "rules": {
+      "import/order": [
+        "error",
+        {
+          "groups": [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index"
+          ],
+          "pathGroups": [
+            {
+              "pattern": "react",
+              "group": "external",
+              "position": "before"
+            }
+          ],
+          "pathGroupsExcludedImportTypes": ["react"],
+          "newlines-between": "always",
+          "alphabetize": {
+            "order": "asc",
+            "caseInsensitive": true
+          }
+        }
+      ],
       "object-curly-spacing": [
         "error",
         "always"
