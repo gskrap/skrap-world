@@ -18,21 +18,15 @@ const LinkSection = ({
 }) => {
   return (
     <section style={{ display: 'flex', marginBottom: '24px' }}>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          minWidth: '60px',
-          marginRight: '16px',
-        }}
-      >
-        <Icon size={60} />
+      <div style={{ minWidth: '30px', marginTop: '4px', marginRight: '12px' }}>
+        <Icon size={30} />
       </div>
       <div>
-        <h2>{title}</h2>
+        <h3>{title}</h3>
         <p>{description}</p>
-        <a href={`https://${linkUrl}`} target="_blank" rel="noreferrer">{linkUrl}</a>
+        <a href={`https://${linkUrl}`} target="_blank" rel="noreferrer">
+          <strong>{linkUrl}</strong>
+        </a>
       </div>
     </section>
   );
