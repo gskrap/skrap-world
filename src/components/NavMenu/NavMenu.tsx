@@ -6,7 +6,7 @@ import { HOME, LINKS, MORE } from '../../constants/routes';
 
 export const NavMenu = () => {
   const navigate = useNavigate();
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     navigate(e.target.value);
@@ -20,7 +20,7 @@ export const NavMenu = () => {
         alignItems: 'center',
       }}
     >
-      <select onChange={handleChange} value={location.pathname}>
+      <select onChange={handleChange} value={pathname}>
         <option value={HOME}>home</option>
         <option value={LINKS}>links</option>
         <option value={MORE}>more</option>
