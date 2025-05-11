@@ -12,7 +12,7 @@ export const AppHeader = () => {
         borderBottom: '1px solid black',
       }}
     >
-      <p style={{ fontFamily: 'AbFubu', fontSize: '60px' }}>Skrap World</p>
+      <p style={{ fontFamily: 'JupiterCrash', fontSize: '60px' }}>Skrap World</p>
       <NavMenu />
     </header>
   );
