@@ -14,7 +14,7 @@ export const AppHeader = () => {
         borderBottom: '1px solid black',
       }}
     >
-      Skrap World
+      <p>Skrap World</p>
       <NavMenu />
     </header>
   );
