@@ -18,7 +18,7 @@ const LinkSection = ({
 }) => {
   return (
     <section style={{ display: 'flex', marginBottom: '24px' }}>
-      <div style={{ minWidth: '30px', marginTop: '4px', marginRight: '12px' }}>
+      <div style={{ minWidth: '30px', marginRight: '12px' }}>
         <Icon size={30} />
       </div>
       <div>
