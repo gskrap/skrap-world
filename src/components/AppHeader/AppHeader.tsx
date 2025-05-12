@@ -15,7 +15,7 @@ export const AppHeader = () => {
     if (!isHome) {
       navigate(HOME);
     }
-  }
+  };
 
   return (
     <header
@@ -39,4 +39,4 @@ export const AppHeader = () => {
       <NavMenu />
     </header>
   );
-}
+};

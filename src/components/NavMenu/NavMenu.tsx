@@ -26,5 +26,5 @@ export const NavMenu = () => {
         <option value={MORE}>more</option>
       </select>
     </div>
-  )
-}
+  );
+};

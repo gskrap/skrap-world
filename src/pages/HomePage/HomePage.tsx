@@ -9,4 +9,4 @@ export const HomePage = () => {
       <p style={{ marginTop: '16px' }}>[wip: rebuilding the site for 2025]</p>
     </div>
   );
-}
+};

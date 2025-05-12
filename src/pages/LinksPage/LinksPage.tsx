@@ -30,7 +30,7 @@ const LinkSection = ({
       </div>
     </section>
   );
-}
+};
 
 export const LinksPage = () => {
   return (
@@ -61,4 +61,4 @@ export const LinksPage = () => {
       />
     </div>
   );
-}
+};
