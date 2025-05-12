@@ -3,11 +3,14 @@ import React, { KeyboardEvent, useCallback, useEffect, useReducer, useRef } from
 import { GRID_DIMENSION, CELL_SIZE, BORDER_SIZE, ArrowDirectionMap } from './constants';
 import { SnakeGameOverOverlay } from './SnakeGameOverOverlay';
 import { initialState, snakeReducer } from './snakeReducer';
+import { Direction } from './types';
 import { isSamePosition, doesSnakeContainPosition } from './utils';
+
+import './Snake.css';
 
 export const Snake = () => {
   const [state, dispatch] = useReducer(snakeReducer, initialState);
-  const { snake, food, score, isGameRunning, isGameLost } = state;
+  const { snake, food, direction, score, isGameRunning, isGameLost } = state;
 
   const boardRef = useRef<HTMLDivElement>(null);
 
@@ -16,7 +19,7 @@ export const Snake = () => {
 
     const interval = setInterval(() => {
       dispatch({ type: 'MOVE_SNAKE' });
-    }, 150);
+    }, 100);
 
     return () => clearInterval(interval);
   }, [isGameRunning]);
@@ -39,6 +42,21 @@ export const Snake = () => {
     }
   }, []);
 
+  const getHeadFillClass = () => {
+    switch (direction) {
+      case Direction.RIGHT:
+        return 'fill fill-right';
+      case Direction.LEFT:
+        return 'fill fill-left';
+      case Direction.UP:
+        return 'fill fill-up';
+      case Direction.DOWN:
+        return 'fill fill-down';
+      default:
+        return 'fill';
+    }
+  };
+
   return (
     <div>
       <button onClick={handleStartGame}>Start</button>
@@ -54,21 +72,24 @@ export const Snake = () => {
           >
             {Array.from({ length: GRID_DIMENSION }).map((_, rowIdx) => (
               <div key={rowIdx} style={{ display: 'flex' }}>
-                {Array.from({ length: GRID_DIMENSION }).map((_, colIdx) => (
-                  <div
-                    key={colIdx}
-                    style={{
-                      height: `${CELL_SIZE}px`,
-                      width: `${CELL_SIZE}px`,
-                      ...(isSamePosition(food, [rowIdx, colIdx]) && {
-                        background: 'red',
-                      }),
-                      ...(doesSnakeContainPosition(snake, [rowIdx, colIdx]) && {
-                        background: 'green',
-                      }),
-                    }}
-                  />
-                ))}
+                {Array.from({ length: GRID_DIMENSION }).map((_, colIdx) => {
+                  const isHead = isSamePosition(snake[0], [rowIdx, colIdx]);
+                  const isBody = doesSnakeContainPosition(snake, [rowIdx, colIdx]);
+                  const isFood = isSamePosition(food, [rowIdx, colIdx]);
+
+                  return (
+                    <div
+                      key={`${rowIdx-colIdx}`}
+                      className={isHead ? getHeadFillClass() : ''}
+                      style={{
+                        height: `${CELL_SIZE}px`,
+                        width: `${CELL_SIZE}px`,
+                        ...(isBody && { backgroundColor: 'green' }),
+                        ...(isFood && { backgroundColor: 'red' }),
+                      }}
+                    />
+                  );
+                })}
               </div>
             ))}
           </div>

@@ -1,0 +1,55 @@
+.fill-right {
+  animation: fill-right 100ms linear;
+  transform-origin: left;
+}
+
+.fill-left {
+  animation: fill-left 100ms linear;
+  transform-origin: right;
+}
+
+.fill-up {
+  animation: fill-up 100ms linear;
+  transform-origin: bottom;
+}
+
+.fill-down {
+  animation: fill-down 100ms linear;
+  transform-origin: top;
+}
+
+@keyframes fill-right {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fill-left {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fill-up {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fill-down {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
