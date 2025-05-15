@@ -3,7 +3,7 @@ import React, { KeyboardEvent, useCallback, useEffect, useReducer, useRef } from
 import { GRID_DIMENSION, CELL_SIZE, BORDER_SIZE, ArrowDirectionMap } from './constants';
 import { SnakeGameOverOverlay } from './SnakeGameOverOverlay';
 import { initialState, snakeReducer } from './snakeReducer';
-import { Direction } from './types';
+import { Direction, Position } from './types';
 import { isSamePosition, doesSnakeContainPosition } from './utils';
 
 import './Snake.css';
@@ -45,16 +45,46 @@ export const Snake = () => {
   const getHeadFillClass = () => {
     switch (direction) {
       case Direction.RIGHT:
-        return 'fill fill-right';
+        return 'head-right';
       case Direction.LEFT:
-        return 'fill fill-left';
+        return 'head-left';
       case Direction.UP:
-        return 'fill fill-up';
+        return 'head-up';
       case Direction.DOWN:
-        return 'fill fill-down';
+        return 'head-down';
       default:
-        return 'fill';
+        return '';
     }
+  };
+
+  const getTailFillClass = () => {
+    if (snake.length < 2) return '';
+    const tail = snake[snake.length - 1];
+    const beforeTail = snake[snake.length - 2];
+
+    const [r1, c1] = beforeTail;
+    const [r2, c2] = tail;
+
+    if (r2 === r1 && c2 === c1 - 1) return 'tail-right'; // tail moving right
+    if (r2 === r1 && c2 === c1 + 1) return 'tail-left'; // tail moving left
+    if (r2 === r1 + 1 && c2 === c1) return 'tail-up'; // tail moving up
+    if (r2 === r1 - 1 && c2 === c1) return 'tail-down'; // tail moving down
+
+    return '';
+  };
+
+  const getCellClass = (position: Position) => {
+    const isFood = isSamePosition(food, position);
+    const isHead = isSamePosition(snake[0], position);
+    const isTail = isSamePosition(snake[snake.length - 1], position);
+    const isBody = doesSnakeContainPosition(snake, position);
+
+    if (isFood) return 'food';
+    if (isHead) return getHeadFillClass();
+    if (isTail) return getTailFillClass();
+    if (isBody) return 'body';
+
+    return '';
   };
 
   return (
@@ -72,24 +102,16 @@ export const Snake = () => {
           >
             {Array.from({ length: GRID_DIMENSION }).map((_, rowIdx) => (
               <div key={rowIdx} style={{ display: 'flex' }}>
-                {Array.from({ length: GRID_DIMENSION }).map((_, colIdx) => {
-                  const isHead = isSamePosition(snake[0], [rowIdx, colIdx]);
-                  const isBody = doesSnakeContainPosition(snake, [rowIdx, colIdx]);
-                  const isFood = isSamePosition(food, [rowIdx, colIdx]);
-
-                  return (
-                    <div
-                      key={`${rowIdx-colIdx}`}
-                      className={isHead ? getHeadFillClass() : ''}
-                      style={{
-                        height: `${CELL_SIZE}px`,
-                        width: `${CELL_SIZE}px`,
-                        ...(isBody && { backgroundColor: 'green' }),
-                        ...(isFood && { backgroundColor: 'red' }),
-                      }}
-                    />
-                  );
-                })}
+                {Array.from({ length: GRID_DIMENSION }).map((_, colIdx) => (
+                  <div
+                    key={`${rowIdx-colIdx}`}
+                    className={getCellClass([rowIdx, colIdx])}
+                    style={{
+                      height: `${CELL_SIZE}px`,
+                      width: `${CELL_SIZE}px`,
+                    }}
+                  />
+                ))}
               </div>
             ))}
           </div>

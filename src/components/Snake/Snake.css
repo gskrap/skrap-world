@@ -1,24 +1,60 @@
-.fill-right {
-  animation: fill-right 100ms linear;
+.food {
+  background-color: red;
+}
+
+.body {
+  background-color: green;
+}
+
+[class^="head-"],
+[class^="tail-"] {
+  background-color: green;
+  animation-duration: 100ms;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+.head-right {
+  animation-name: scale-in-x;
   transform-origin: left;
 }
 
-.fill-left {
-  animation: fill-left 100ms linear;
+.head-left {
+  animation-name: scale-in-x;
   transform-origin: right;
 }
 
-.fill-up {
-  animation: fill-up 100ms linear;
+.head-up {
+  animation-name: scale-in-y;
   transform-origin: bottom;
 }
 
-.fill-down {
-  animation: fill-down 100ms linear;
+.head-down {
+  animation-name: scale-in-y;
   transform-origin: top;
 }
 
-@keyframes fill-right {
+.tail-right {
+  animation-name: scale-out-x;
+  transform-origin: right;
+}
+
+.tail-left {
+  animation-name: scale-out-x;
+  transform-origin: left;
+}
+
+.tail-up {
+  animation-name: scale-out-y;
+  transform-origin: top;
+}
+
+.tail-down {
+  animation-name: scale-out-y;
+  transform-origin: bottom;
+}
+
+@keyframes scale-in-x {
   from {
     transform: scaleX(0);
   }
@@ -27,29 +63,29 @@
   }
 }
 
-@keyframes fill-left {
+@keyframes scale-in-y {
   from {
-    transform: scaleX(0);
+    transform: scaleY(0);
   }
   to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes scale-out-x {
+  from {
     transform: scaleX(1);
   }
-}
-
-@keyframes fill-up {
-  from {
-    transform: scaleY(0);
-  }
   to {
-    transform: scaleY(1);
+    transform: scaleX(0);
   }
 }
 
-@keyframes fill-down {
+@keyframes scale-out-y {
   from {
-    transform: scaleY(0);
+    transform: scaleY(1);
   }
   to {
-    transform: scaleY(1);
+    transform: scaleY(0);
   }
 }
