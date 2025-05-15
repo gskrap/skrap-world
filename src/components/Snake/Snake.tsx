@@ -95,7 +95,7 @@ export const Snake = () => {
       <div style={{ display: 'flex' }}>
         <div style={{ position: 'relative' }}>
           <div
-            style={{ border: `${BORDER_SIZE}px solid black` }}
+            style={{ border: `${BORDER_SIZE}px solid black`, outline: 'none' }}
             onKeyDown={handleKeyDown}
             ref={boardRef}
             tabIndex={0}
