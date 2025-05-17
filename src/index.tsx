@@ -13,6 +13,12 @@ if ('serviceWorker' in navigator) {
       registration.unregister();
     }
   });
+
+  if (window.caches) {
+    caches.keys().then((names) => {
+      for (let name of names) caches.delete(name);
+    });
+  }
 }
 
 const root = ReactDOM.createRoot(
