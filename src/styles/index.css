@@ -1,11 +1,11 @@
 @font-face {
   font-family: AbFubu;
   src: local("AbFubu"),
-  url(../assets/AbFubu-DJ6E.ttf);
+  url(../assets/fonts/AbFubu-DJ6E.ttf);
 }
 
 @font-face {
   font-family: JupiterCrash;
   src: local("JupiterCrash"),
-  url(../assets/JupiterCrashBrk-8wVn.ttf);
+  url(../assets/fonts/JupiterCrashBrk-8wVn.ttf);
 }

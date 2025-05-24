@@ -1,5 +1,6 @@
 .food {
-  background-color: red;
+  background-size: cover;
+  background-image: url('../../assets/apple.png');
 }
 
 .body {
