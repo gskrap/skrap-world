@@ -1,0 +1,19 @@
+.d-pad {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .d-pad {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: repeat(3, 40px);
+    gap: 2px;
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -21,9 +21,9 @@ export const NavMenu = () => {
       }}
     >
       <select onChange={handleChange} value={pathname}>
-        <option value={HOME}>home</option>
-        <option value={LINKS}>links</option>
-        <option value={MORE}>more</option>
+        <option value={HOME}>Home</option>
+        <option value={LINKS}>Links</option>
+        <option value={MORE}>More</option>
       </select>
     </div>
   );

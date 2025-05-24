@@ -1,9 +1,11 @@
 import React, { KeyboardEvent, useCallback, useEffect, useReducer, useRef, useState } from 'react';
 
 import { GRID_DIMENSION, CELL_SIZE, BORDER_SIZE, ArrowDirectionMap } from './constants';
+import { DirectionalPad } from './DirectionalPad';
 import { SnakeGameOverOverlay } from './SnakeGameOverOverlay';
 import { initialState, snakeReducer } from './snakeReducer';
 import { getCellClass } from './styleHelpers';
+import { Direction } from './types';
 
 import './Snake.css';
 
@@ -50,18 +52,30 @@ export const Snake = () => {
     dispatch({ type: 'RESET' });
   };
 
+  const handleDirectionChange = (direction: Direction) => {
+    dispatch({ type: 'CHANGE_DIRECTION', direction });
+  };
+
   const handleKeyDown = useCallback((e: KeyboardEvent<HTMLDivElement>) => {
     e.preventDefault();
     const direction = ArrowDirectionMap[e.nativeEvent.key];
 
     if (direction !== undefined) {
-      dispatch({ type: 'CHANGE_DIRECTION', direction });
+      handleDirectionChange(direction);
     }
   }, []);
 
   return (
-    <div ref={boardContainerRef} style={{ display: 'flex', height: '100%' }}>
-      <div style={{ position: 'relative', marginLeft: 'auto', marginRight: 'auto' }}>
+    <div
+      ref={boardContainerRef}
+      style={{
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
+      <div style={{ position: 'relative' }}>
         <div
           style={{ border: `${BORDER_SIZE}px solid black`, outline: 'none' }}
           onKeyDown={handleKeyDown}
@@ -97,6 +111,7 @@ export const Snake = () => {
           cellSize={cellSize}
         />
       </div>
+      <DirectionalPad onDirectionChange={handleDirectionChange} />
     </div>
   );
 };
