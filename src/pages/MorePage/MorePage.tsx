@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Snake } from '../../components/Snake';
-
 export const MorePage = () => {
   return (
-    <Snake />
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+      <p style={{ marginTop: '16px' }}>wip: rebuilding in 2025</p>
+    </div>
   );
 };
