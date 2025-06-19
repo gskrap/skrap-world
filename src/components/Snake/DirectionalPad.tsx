@@ -15,29 +15,29 @@ export const DirectionalPad = ({ onDirectionChange }: OwnProps) => {
     <div className="d-pad">
       <div />
       <button
-        className="button"
-        onClick={() => onDirectionChange(Direction.UP)}
+        className="button border"
+        onTouchStart={() => onDirectionChange(Direction.UP)}
       >
         <FaArrowUp />
       </button>
       <div />
       <button
-        className="button"
-        onClick={() => onDirectionChange(Direction.LEFT)}
+        className="button border"
+        onTouchStart={() => onDirectionChange(Direction.LEFT)}
       >
         <FaArrowLeft />
       </button>
       <div />
       <button
-        className="button"
-        onClick={() => onDirectionChange(Direction.RIGHT)}
+        className="button border"
+        onTouchStart={() => onDirectionChange(Direction.RIGHT)}
       >
         <FaArrowRight />
       </button>
       <div />
       <button
-        className="button"
-        onClick={() => onDirectionChange(Direction.DOWN)}
+        className="button border"
+        onTouchStart={() => onDirectionChange(Direction.DOWN)}
       >
         <FaArrowDown />
       </button>

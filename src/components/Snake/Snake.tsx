@@ -38,7 +38,7 @@ export const Snake = () => {
 
     const interval = setInterval(() => {
       dispatch({ type: 'MOVE_SNAKE' });
-    }, 100);
+    }, 120);
 
     return () => clearInterval(interval);
   }, [isGameRunning]);
@@ -77,7 +77,8 @@ export const Snake = () => {
     >
       <div style={{ position: 'relative' }}>
         <div
-          style={{ border: `${BORDER_SIZE}px solid black`, outline: 'none' }}
+          className="border"
+          style={{ outline: 'none' }}
           onKeyDown={handleKeyDown}
           ref={boardRef}
           tabIndex={0}
