@@ -1,7 +1,7 @@
 import React, { KeyboardEvent, useCallback, useEffect, useReducer, useRef, useState } from 'react';
 
 import { GRID_DIMENSION, CELL_SIZE, BORDER_SIZE, ArrowDirectionMap } from './constants';
-import { DirectionalPad } from './DirectionalPad';
+import { Joystick } from './Joystick';
 import { SnakeGameOverOverlay } from './SnakeGameOverOverlay';
 import { initialState, snakeReducer } from './snakeReducer';
 import { getCellClass } from './styleHelpers';
@@ -112,7 +112,7 @@ export const Snake = () => {
           cellSize={cellSize}
         />
       </div>
-      <DirectionalPad onDirectionChange={handleDirectionChange} />
+      <Joystick onDirectionChange={handleDirectionChange} />
     </div>
   );
 };

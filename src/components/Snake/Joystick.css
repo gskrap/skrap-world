@@ -1,0 +1,9 @@
+.joystick {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .joystick {
+    display: block;
+  }
+}
