@@ -3,8 +3,8 @@ export type Position = [number, number];
 export type Snake = Position[];
 
 export enum Direction {
-  LEFT,
-  UP,
-  RIGHT,
-  DOWN,
+  LEFT = 'left',
+  UP = 'up',
+  RIGHT = 'right',
+  DOWN = 'down',
 }

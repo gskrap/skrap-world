@@ -1,8 +1,12 @@
-.d-pad {
+.joystick, .d-pad {
   display: none;
 }
 
 @media (max-width: 600px) {
+  .joystick {
+    display: block;
+  }
+
   .d-pad {
     margin-top: 10px;
     display: grid;
