@@ -36,26 +36,26 @@ export const LinksPage = () => {
   return (
     <div style={{ lineHeight: 1.5 }}>
       <LinkSection
-        title="Do you sell something online?"
-        description="Use Attentive to send messages your customers will love, across SMS, RCS, and Email"
+        title="Attentive"
+        description="Send messages your customers will love"
         linkUrl="attentive.com"
         Icon={FaEnvelopesBulk}
       />
       <LinkSection
-        title="Wanna see this site's source code?"
-        description="Find it (and no other repos because they're private) on GitHub"
+        title="Github"
+        description="Code lives here"
         linkUrl={`github.com/${GSKRAP}`}
         Icon={FaGithub}
       />
       <LinkSection
-        title="Are you looking for me?"
-        description="This is my Instagram"
+        title="Instagram"
+        description="Animals, plants, etc."
         linkUrl={`instagram.com/${GSKRAP}`}
         Icon={FaSquareInstagram}
       />
       <LinkSection
-        title="Are you very professional?"
-        description="Then so am I"
+        title="LinkedIn"
+        description="For a professional connection"
         linkUrl={`linkedin.com/in/${GSKRAP}`}
         Icon={FaLinkedin}
       />
