@@ -1,2 +1,5 @@
-export { AppHeader } from './AppHeader';
-export { NavMenu } from './NavMenu';
+export * from './AppHeader';
+export * from './Face';
+export * from './NavMenu';
+export * from './Popup';
+export * from './Snake';

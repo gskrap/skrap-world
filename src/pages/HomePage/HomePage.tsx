@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Snake } from '../../components/Snake';
+import { Snake } from '../../components';
 
 export const HomePage = () => {
   return (

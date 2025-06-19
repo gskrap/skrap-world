@@ -1,0 +1,63 @@
+import React, { ReactNode } from 'react';
+
+import { FaX } from 'react-icons/fa6';
+
+import './Popup.css';
+
+interface OwnProps {
+  isOpen: boolean;
+  onOpenChange: (val: boolean) => void;
+  title?: string;
+  children?: ReactNode;
+}
+
+export const Popup = ({
+  isOpen,
+  onOpenChange,
+  title,
+  children,
+}: OwnProps) => {
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        background: 'rgba(128, 128, 128, 0.3)',
+        pointerEvents: isOpen ? 'auto' : 'none',
+        opacity: isOpen ? 1 : 0,
+        transition: 'opacity 1s ease',
+      }}
+    >
+      {isOpen && (
+        <div
+          style={{
+            position: 'absolute',
+            top: '40%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+          }}
+          className="popup border"
+        >
+          <div className="top-bar">
+            <p>{title}</p>
+            <div
+              onClick={() => onOpenChange(false)}
+              className="close-btn border"
+            >
+              <FaX size={12} />
+            </div>
+          </div>
+          {children}
+          <div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
+            <button
+              onClick={() => onOpenChange(false)}
+              className="btn border"
+            >
+              ok
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};

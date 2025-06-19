@@ -9,3 +9,10 @@
   src: local("JupiterCrash"),
   url(../assets/fonts/JupiterCrashBrk-8wVn.ttf);
 }
+
+.border {
+  border-top: 2px solid lightgray;
+  border-right: 2px solid gray;
+  border-bottom: 2px solid gray;
+  border-left: 2px solid lightgray;
+}

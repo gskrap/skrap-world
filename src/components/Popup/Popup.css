@@ -1,0 +1,39 @@
+.popup {
+  position: absolute;
+  background: #BFBFBF;
+  min-width: 320px;
+}
+
+.popup > .top-bar {
+  background: -moz-linear-gradient(left, #1b007d 18%, #0081d1 100%);
+  background: -webkit-linear-gradient(left, #1b007d 18%,#0081d1 100%);
+  background: linear-gradient(to right, #1b007d 18%,#0081d1 100%);
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 2px 3px 6px;
+}
+
+.popup > .top-bar > p {
+  color: white;
+  font-weight: bold;
+}
+
+.popup > .top-bar > .close-btn {
+  background: #BFBFBF;
+  cursor: pointer;
+  padding: 0 2px;
+}
+
+.popup > .top-bar > .close-btn > * {
+  padding-right: 2px;
+}
+
+.popup > * {
+  padding: 8px;
+}
+
+.btn {
+  background: #BFBFBF;
+  cursor: pointer;
+  padding: 0 12px;
+}
