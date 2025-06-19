@@ -1,7 +1,5 @@
 import React, { ReactNode } from 'react';
 
-import { FaX } from 'react-icons/fa6';
-
 import './Popup.css';
 
 interface OwnProps {
@@ -40,12 +38,6 @@ export const Popup = ({
         >
           <div className="top-bar">
             <p>{title}</p>
-            <div
-              onClick={() => onOpenChange(false)}
-              className="close-btn border"
-            >
-              <FaX size={12} />
-            </div>
           </div>
           {children}
           <div style={{ display: 'flex', flexDirection: 'row-reverse' }}>

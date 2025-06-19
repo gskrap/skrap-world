@@ -18,15 +18,6 @@
   font-weight: bold;
 }
 
-.popup > .top-bar > .close-btn {
-  background: #BFBFBF;
-  cursor: pointer;
-}
-
-.popup > .top-bar > .close-btn > * {
-  padding-right: 1px;
-}
-
 .popup > * {
   padding: 8px;
 }
