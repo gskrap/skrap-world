@@ -7,7 +7,7 @@ export const GRID_DIMENSION = 30;
 export const CELL_SIZE = 24;
 
 // size in px of border
-export const BORDER_SIZE = 2;
+export const BORDER_SIZE = 4;
 
 export const ArrowDirectionMap: Record<string, Direction> = {
   ArrowUp: Direction.UP,

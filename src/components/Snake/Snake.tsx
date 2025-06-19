@@ -1,6 +1,6 @@
 import React, { KeyboardEvent, useCallback, useEffect, useReducer, useRef, useState } from 'react';
 
-import { GRID_DIMENSION, CELL_SIZE, BORDER_SIZE, ArrowDirectionMap } from './constants';
+import { GRID_DIMENSION, CELL_SIZE, ArrowDirectionMap } from './constants';
 import { Joystick } from './Joystick';
 import { SnakeGameOverOverlay } from './SnakeGameOverOverlay';
 import { initialState, snakeReducer } from './snakeReducer';
@@ -77,7 +77,7 @@ export const Snake = () => {
     >
       <div style={{ position: 'relative' }}>
         <div
-          className="border"
+          className="board border"
           style={{ outline: 'none' }}
           onKeyDown={handleKeyDown}
           ref={boardRef}
