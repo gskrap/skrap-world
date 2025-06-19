@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import { HOME, LINKS, MORE } from '../../constants/routes';
+import { HOME, ABOUT, LINKS } from '../../constants/routes';
 
 export const NavMenu = () => {
   const navigate = useNavigate();
@@ -22,8 +22,8 @@ export const NavMenu = () => {
     >
       <select onChange={handleChange} value={pathname}>
         <option value={HOME}>Home</option>
+        <option value={ABOUT}>About</option>
         <option value={LINKS}>Links</option>
-        <option value={MORE}>More</option>
       </select>
     </div>
   );

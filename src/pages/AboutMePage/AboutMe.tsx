@@ -1,9 +1,11 @@
 import React from 'react';
 
-export const MorePage = () => {
+import { Face } from '../../components/Face';
+
+export const AboutMe = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-      <p style={{ marginTop: '16px' }}>wip: rebuilding in 2025 ~</p>
+      <Face />
     </div>
   );
 };

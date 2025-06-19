@@ -3,8 +3,8 @@ import React from 'react';
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import { AppHeader } from './components';
-import { HOME, LINKS, MORE } from './constants/routes';
-import { HomePage, LinksPage, MorePage } from './pages';
+import { HOME, ABOUT, LINKS } from './constants/routes';
+import { HomePage, LinksPage, AboutMe } from './pages';
 
 const App = () => {
   return (
@@ -14,8 +14,8 @@ const App = () => {
         <main style={{ flex: 1, padding: '16px', overflowY: 'auto' }}>
           <Routes>
             <Route path={HOME} element={<HomePage />} />
+            <Route path={ABOUT} element={<AboutMe />} />
             <Route path={LINKS} element={<LinksPage />} />
-            <Route path={MORE} element={<MorePage />} />
           </Routes>
         </main>
       </div>
