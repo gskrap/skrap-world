@@ -21,11 +21,10 @@
 .popup > .top-bar > .close-btn {
   background: #BFBFBF;
   cursor: pointer;
-  padding: 0 2px;
 }
 
 .popup > .top-bar > .close-btn > * {
-  padding-right: 2px;
+  padding-right: 1px;
 }
 
 .popup > * {

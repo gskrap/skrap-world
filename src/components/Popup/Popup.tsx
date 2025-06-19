@@ -49,12 +49,12 @@ export const Popup = ({
           </div>
           {children}
           <div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
-            <button
+            <div
               onClick={() => onOpenChange(false)}
               className="btn border"
             >
               ok
-            </button>
+            </div>
           </div>
         </div>
       )}
