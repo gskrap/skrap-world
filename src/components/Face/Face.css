@@ -4,8 +4,9 @@
 }
 
 #face {
-  font-family: monospace;
+  font-family: "Courier New";
   white-space: pre;
+  font-size: 13px;
   color: #01C304;
 }
 
@@ -15,6 +16,6 @@
   }
 
   #face {
-    font-size: 8px;
+    font-size: 7px;
   }
 }
