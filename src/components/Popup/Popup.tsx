@@ -22,7 +22,7 @@ export const Popup = ({
       style={{
         position: 'absolute',
         inset: 0,
-        background: 'rgba(128, 128, 128, 0.3)',
+        background: 'rgba(128, 128, 128, 0.6)',
         pointerEvents: isOpen ? 'auto' : 'none',
         opacity: isOpen ? 1 : 0,
         transition: 'opacity 1s ease',

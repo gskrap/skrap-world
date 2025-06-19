@@ -12,6 +12,7 @@
 
 @media (max-width: 600px) {
   #face-container {
+    margin-top: 60px;
     padding: 4px;
   }
 
