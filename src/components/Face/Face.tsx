@@ -59,15 +59,33 @@ const asciiFace = dedent(`
 
 export const Face = () => {
   return (
-    <div
-      id="face-container"
-      className="border"
-    >
+    <div id="face-container" className="border">
       <div id="face">
         <Typewriter
-          options={{ delay: 2 }}
+          options={{ delay: 1, autoStart: false }}
           onInit={(typewriter) => {
-            typewriter.typeString(asciiFace).start();
+            const totalLines = asciiFace.split('\n');
+            const typedLinesChunkSize = 2;
+            const pastedLinesChunkSize = 8;
+
+            let i = 0;
+            let shouldPaste = true;
+
+            while (i < totalLines.length) {
+              const chunkSize = shouldPaste ? pastedLinesChunkSize : typedLinesChunkSize;
+              const chunk = totalLines
+                .slice(i, i + chunkSize)
+                .join('\n') + (i + chunkSize < totalLines.length ? '\n' : '');
+
+              typewriter = shouldPaste
+                ? typewriter.pasteString(chunk, null)
+                : typewriter.typeString(chunk);
+
+              i += chunkSize;
+              shouldPaste = !shouldPaste;
+            }
+
+            typewriter.start();
           }}
         />
       </div>

@@ -23,6 +23,7 @@ export const AboutMe = () => {
         justifyContent: 'center',
       }}
     >
+      <Face />
       <Popup
         isOpen={isPopupOpen}
         onOpenChange={setIsPopupOpen}
@@ -40,7 +41,6 @@ export const AboutMe = () => {
           </a>
         </div>
       </Popup>
-      <Face />
     </div>
   );
 };
